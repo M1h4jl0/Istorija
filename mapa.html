@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mapastil.css">
+    <link rel="stylesheet" href="stajl.css">
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"/>
+    <link rel="icon" href="mihailo2.ico">
+    <title>Mapa</title>
+</head>
+<body onload="tranzicija()">
+    <div class="container">
+        <section id="mapa">
+            <div id="tBlock"></div>
+            <div class="veliki">
+                <div class="mali" id="map"></div>
+                <div class="mali">
+                    <h2 id="kako">Kako šta radi?</h2>
+                    <p>Na mapi su označene neke od ulica u Beogradu koje nose imena srpskih velikana.<br>
+                        Klikom na označena polja možete pročitati ukratko o tom licu, a ako želite da saznate više možete pogledati na dole označenim poljima više o svakoj ličnosti.
+                    </p>
+                    <div id="drzac">
+                        <div class="mauwi">
+                            <div class="krug" id="crveni"></div>
+                            <div class="krug" id="purp" onclick="EasterEgg()" ></div>
+                            <div class="krug" id="zuti" ></div>
+                            <div class="krug" id="zeleni"></div>
+                        </div>
+                        <div class="mauwi">
+                            <p class="txt">Stari Grad</p>
+                            <p class="txt">Palilula</p>
+                            <p class="txt">Vračar</p>
+                            <p class="txt">Savski Venac</p>
+                        </div>
+                    </div>
+                    <a href="#vise"><button id="dugme"><i class="fa fa-arrow-down fa-2x" aria-hidden="true"></i></button></a>
+                </div>
+            </div>    
+        </section>
+        <section id="vise">
+            <a href="#mapa"><button id="dugme2"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></button></a>
+            <div id="pojedinacni">
+                <div class="swiper mySwiper containerMali">
+                    <div class="swiper-wrapper content">
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="Karadjordje.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Karadjordje</span>
+                                    <a class="linkVise" onclick="togglePopup()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="ProtaMateja.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Prota Matija</span>
+                                    <a class="linkVise" onclick="togglePopup2()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="IlijaBircanin.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Ilija Birčanin</span>
+                                    <a class="linkVise" onclick="togglePopup3()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="StanojeGlavas.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Stanoje Glavaš</span>
+                                    <a class="linkVise" onclick="togglePopup4()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="VasaCarapic.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Vasa Čarapić</span>
+                                    <a class="linkVise" onclick="togglePopup5()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="SimaMarkovic.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Sima Marković</span>
+                                    <a class="linkVise" onclick="togglePopup6()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="PetarDobrnjac.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Vojvoda Dobrnjac</span>
+                                    <a class="linkVise" onclick="togglePopup7()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="LukaLazarevic.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Luka Lazarević</span>
+                                    <a class="linkVise" onclick="togglePopup8()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="IlijaGarasanin.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Ilija Garašanin</span>
+                                    <a class="linkVise" onclick="togglePopup9()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="HadžiProdan.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Hadži Prodan</span>
+                                    <a class="linkVise" onclick="togglePopup10()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="AleksaNenadovic.jpg" height="400px" width="300px">
+                                </div>
+                                <div class="ime">
+                                    <span class="name">Aleksa Nenadović</span>
+                                    <a class="linkVise" onclick="togglePopup11()">Pročitaj više...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+            </div>
+        </section>
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()">&times;</div>
+                <h1>Karadjordje</h1>
+                <div id="kontent">
+                    <img class="maliK" src="Karadjordje.jpg">
+                    <p class="maliK">Djordje Petrović rodjen je 16.novembra 1768. godine u Viševcu, a ubijen je 26.jula 1817.godine u Radovanjskom lugu blizu Velike Plane. Svoje nadimke Karadjordje
+                        ili Crni Djordje je dobio zbog svoje jake naravi i crnih očiju. Odrastao je u siromašnoj porodici, a slavu je stekao radom kod imućnijih ljudi. Nije sasvim dokazano ali se priča 
+                        da je ubio svog oca kako bi ga oslobodio ropstva. Posle Seče knezova 1804. godine izabran je za vodju Prvog srpskog ustanka u Orašcu. Karadjordje je bio visok i snažan čovek okruglog
+                        lica i stinih crnih očiju. Prema izvorima nije puno pričao, ali njegov su glas uporedjivali sa ženskim zato što je bio tanak i visok. Kao mladić sa teškim temperamentom oženio se 
+                        Jelenom Jovanović sa kojom je imao sedmoro dece.
+                        Kada je Miloš Obrenović došao na vlast naredio je da se Karadjordje usmrti. Ubistvo je organizovao Karadjordjev kum Vujica Vulićević. Tokom noći 26.jula 1817.godine dok je spavao ispod
+                        drveta Novica Novaković ga je ubio. Njegovu prepariranu glavu su poslali sultanu.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-2">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup2()">&times;</div>
+                <h1>Prota Matija</h1>
+                <div id="kontent">
+                    <img class="maliK" src="ProtaMateja.jpg">
+                    <p class="maliK">Prota Matija Nenadović rodjen je 26. februara 1777. godine, a umro je 29.novembra 1854. godine. Bio je srpski diplomata, pisac, vojvoda i prvi predsednik
+                        Praviteljstvujuščeg Sovjeta. Tokom ustanka je par puta pregovarao o miru što je kasnije doprinelo. Napisao je jedno od najznašajnijih dela srpske književnosti - Memoari.
+                        Cilj tog dela jeste bio da ostavi trag o bitnim ljudima i dogadjajima za buduće generacije i pisano je na srpskom narodnom jeziku. Imao je talenat u pravnim i diplomatskim
+                        poslovima koji je stako od oca. Bio je jedan od ljudi koji su najmudrije pregovarali sa Turcima. Kada je umro na grobu mu je stajalo malo jevandjelje koje je dobio kao pokon
+                        na svom putu u Rusiji. Prema opisu bio je srednjeg rasta sa puno kose i pred starost ćelav. Jako je uvažavao sveštenički čin i do smrti je nosio svešteničko odelo.
+                        Ulica Prote Mateje u Beogradu nalazi se na Vračaru i proteže se od Bulevara Kralja Aleksandra do Krunske.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-3">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup3()">&times;</div>
+                <h1>Ilija Birčanin</h1>
+                <div id="kontent">
+                    <img class="maliK" src="IlijaBircanin.jpg">
+                    <p class="maliK">Ilija Birčanin rodjen je u blizini Nikšića oko 1764. godine, ali se sa Nenadovićima doselio u valjevski kraj bežeći pred Turcima.
+                        O Ilijinom ranom životu nema mnogo podataka. Najviše se saznaje u Memoarima Prote Mateje Nenadovića gde piše da je za vreme vladavine Hadži-Mustafa Paše na upravu dobio
+                        Podgorje. Poslednje dane svog života Birčanin je proveo u tamnici sa Aleksom Nenadovićem. Kako navodi pisac bojao se smrti i molio je Turke za otkup. Nakon smrti njihove
+                        glave su visile ispred Fočićevog zamka. Sahranjen je u manastiru Ćelije sa ukradenom glavom koja je položena uz njegovo telo. Ulica Birčaninova u Beogradu jedna je od
+                        najstarijih ulica opštine Savski Venac. Proteže se od Bulevara Oslobodjenja do Sarajevske ulice. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-4">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup4()">&times;</div>
+                <h1>Stanoje Glavaš</h1>
+                <div id="kontent">
+                    <img class="maliK" src="StanojeGlavas.jpg">
+                    <p class="maliK">Stanoje Glavaš rodjen je 10.februara 1763. godine blizu Sremske Palanke. Njegovog oca su Turci pretukli na smrt i zakleo se da će se osvetitit.
+                        Postao je poznat još pre Prvog srpskog ustanka zato što se istakao kao hajdučki harambaša. U Oračcu su ga 1804. godine predložili za vodju ustanka, ali je on predložio svog
+                        kuma Karadjordja i postao njegova desna ruka. Predanja kažu da se takob žestoko borio da je ulivao Turcima strah u kosti. I samo njegovo ime je bilo zlo znamenje,
+                         verovali su da ako izgovore njegovo ime glasno, mogu da privuku nešto loše. Na Sretenje 15.februara 1815. godine dok je bio na slavlju napala ga je grupa Turaka. Iskasapili su njegovo telo,
+                         a glavi odneli u Beograd kod Skopljak paše. Bio je jako pobožan čovek i nikada nije išao u borbe nedeljom. Takodje je i opominjao sve koje je čuo da psuju. Kako njegovo selo nije imalo crkvu
+                         on je sagradio jednu malo i nabavio za nju zlatni krst i zvono čak iz Rusije. Kada su Turci čuli za tu crkvu spalili su je do temelja, ali predhodno je Stanoje sakrio zvono i krst kako ne bi i 
+                         oni izgoreli. Ulica Stanoja Glavaša na Paliluli spaja Cvijićevu i ulicu 27. marta.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-5">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup5()">&times;</div>
+                <h1>Vasa Čarapić</h1>
+                <div id="kontent">
+                    <img class="maliK" src="VasaCarapic.jpg">
+                    <p class="maliK">Kako legenda tvrdi jedan Srbin je nekom Osmanliji usmrtio psa koga je mnogo voleo. Osmanlija se naljutio i tražio mu isplatu Srbin je sakupio 500 groša i doneo 
+                        mu ih ne u kesi već u jednoj čarapi. Po tom dogadjaju je Vasilije dobio prezime. Vasilije Čarapić rodjen oko 1770. godine kraj Avale, a umro je 29.novembra 1806. godine u opsadi 
+                        Beograda tako što ga je neki Osmanlija pogodio u prsa. Bio je jedan od glavnih vojskovodja Prvog srpskog ustanka i bio je jako blizak sa Karadjordjem. Nagovorio je Karadjordja da 
+                        krenu u oslobodjenje Beograda koji je kasnije uspešno oslobodjen, ali je Čarapić tu junački izgubio život. Pred smrt je zahtevao da ga sahrane u manastiru u Rakovici gde i dan danas
+                        počiva. Ulica Vase Čarapića nalazi se na opštini Stari Grad i proteže se od Studentskog Trga do Francuske ulice.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-6">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup6()">&times;</div>
+                <h1>Sima Marković</h1>
+                <div id="kontent">
+                    <img class="maliK" src="SimaMarkovic.jpg">
+                    <p class="maliK">Sima Marković rodjen je 1768. godine, a pogubljen je 21.marta 1817. godine po naredjenju kneza Miloša Obrenovića u Beogradu. Nalazio se na listi ljudi koji 
+                        su trebali da budu pogubljeni na Sči knezova 1804. godine, ali ipak se izvukao. Posle smrti Vase Čarapića postao je najčuveniji vojvoda u beogradskoj nahiji. Na narodnoj
+                        skupštini u Beogradu 1811. godine izabran je za ministra finansija, čime je postao prvi srpski ministra finansija. Nakon bune protiv kneza Miloša, simu je knez našao i poslao 
+                        kod Marašli Ali paše gde je pogubljen. Prema predanju dželat nije mogao iz prve da preseče Simin vrat već je morao par puta da udari. Ulica kneza Sime Markovića u Beogradu nalazi
+                        se na opštini Stari Grad i proteže se od Pariske ulice kod Kalemegdana do Pop-Lukine ulice.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-7">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup7()">&times;</div>
+                <h1>Vojvoda Dobrnjac</h1>
+                <div id="kontent">
+                    <img class="maliK" src="PetarDobrnjac.jpg">
+                    <p class="maliK">
+                        Petar Todorović Dobrnjac rodjen je 1771. godine u Dobrnju, a umro je 18.oktobra 1831. godine. Najviše se istakao u borbi na Ivankovcu 1805. godine gde je predvodio srpsku vojsku.
+                        Takodje je komandovao srpskom vojskom u boju u Deligradu iste godine. Zbog svadje Dobrnjca i Miloja Petrovića pomoć koja je bila potrebna Stevanu Sindjeliću u bitci na Čegru
+                        bila je izostavljena zbog čega je ta bitka izgubljena. Nakon tog gubitka izgradjena je Ćele kula kod Niša. Bio je jedan od Karadjordjevih protivnika i bio je proteran iz Srbije zajedno
+                        sa Milenkom Stojkovićem. Ulica Vojvode Dobrnjca u Beogradu nalazi se na opštini Palilula i proteže se od Poenkareove i Venizelosove do Bulevara Despota Stefana.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-8">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup8()">&times;</div>
+                <h1>Luka Lazarević</h1>
+                <div id="kontent">
+                    <img class="maliK" src="LukaLazarevic.jpg">
+                    <p class="maliK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                         when an unknown printer took a galley of type and scrambled it to make a type
+                          specimen book. It has survived not only five centuries, but also the leap into
+                           electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-9">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup9()">&times;</div>
+                <h1>Ilija Garašanin</h1>
+                <div id="kontent">
+                    <img class="maliK" src="IlijaGarasanin.jpg">
+                    <p class="maliK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                         when an unknown printer took a galley of type and scrambled it to make a type
+                          specimen book. It has survived not only five centuries, but also the leap into
+                           electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-10">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup10()">&times;</div>
+                <h1>Hadži Prodan</h1>
+                <div id="kontent">
+                    <img class="maliK" src="HadžiProdan.jpg">
+                    <p class="maliK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                         when an unknown printer took a galley of type and scrambled it to make a type
+                          specimen book. It has survived not only five centuries, but also the leap into
+                           electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="popup-11">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup11()">&times;</div>
+                <h1>Aleksa Nenadović</h1>
+                <div id="kontent">
+                    <img class="maliK" src="AleksaNenadovic.jpg">
+                    <p class="maliK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                         when an unknown printer took a galley of type and scrambled it to make a type
+                          specimen book. It has survived not only five centuries, but also the leap into
+                           electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function tranzicija(){
+            document.getElementById("tBlock").classList.toggle("active");
+        }
+        var swiper = new Swiper(".containerMali", {
+          slidesPerView: 5,
+          spaceBetween: 42,
+          loop: true,
+          centerSlide: 'true',
+          fade: 'true',
+          grabCursor: 'true',
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints:{
+              0: {
+                slidesPerView: 1,
+              },
+              800: {
+                  slidesPerView: 3,
+              },
+              1700: {
+                  slidesPerView: 5,
+              },
+          },
+        });
+        function EasterEgg(){
+            window.open('https://soundcloud.com/teodor-399751616/colorful-shack', '_blank');
+        }
+        function togglePopup(){
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+        function togglePopup2(){
+            document.getElementById("popup-2").classList.toggle("active");
+        }
+        function togglePopup3(){
+            document.getElementById("popup-3").classList.toggle("active");
+        }
+        function togglePopup4(){
+            document.getElementById("popup-4").classList.toggle("active");
+        }
+        function togglePopup5(){
+            document.getElementById("popup-5").classList.toggle("active");
+        }
+        function togglePopup5(){
+            document.getElementById("popup-5").classList.toggle("active");
+        }
+        function togglePopup6(){
+            document.getElementById("popup-6").classList.toggle("active");
+        }
+        function togglePopup7(){
+            document.getElementById("popup-7").classList.toggle("active");
+        }
+        function togglePopup8(){
+            document.getElementById("popup-8").classList.toggle("active");
+        }
+        function togglePopup9(){
+            document.getElementById("popup-9").classList.toggle("active");
+        }
+        function togglePopup10(){
+            document.getElementById("popup-10").classList.toggle("active");
+        }function togglePopup11(){
+            document.getElementById("popup-11").classList.toggle("active");
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+#pojedinacni{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -15%;
+    padding: 20px;
+}
+.swiper{
+    width: 1500px;
+}
+.containerMali{
+    max-width: 1600px;
+    width: 100%;
+    padding: 40px;
+}
+section .card .image{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    padding: 3px;
+    background: #ff7226;
+    margin-top: -15px;
+}
+section .card .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #1f1f1f;
+    box-sizing: border-box;
+}
+.card{
+    position: relative;
+    border-radius: 20px;
+    background: #404040;
+    margin: 20px 0;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background: #ff7226;
+    border-radius: 20px 20px 0 0;
+}
+.card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+}
+.card .ime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+.ime .name{
+    color: #ff7226;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ime .linkVise{
+    margin-top: 15px;
+    color: white;
+    font-size: 15px;
+}
+.swiper-navBtn{
+    color: #ff7226;
+    transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+    color: #c24400;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+    font-size: 40px;
+}
+.swiper-button-next{
+    margin-left: 20px;
+}
+.swiper-button-prev{
+    margin-right: 20px;
+}
+.swiper-pagination-bullet{
+    background-color: #ff7226;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active{
+    background-color: #c24400;
+    opacity: 1;
+}
+#dugme2{
+    color: #1f1f1f;
+    width: 145px;
+    height: 60px;
+    border: none;
+    padding-top: 7px;
+    margin-top: 30px;
+    position: relative;
+    left: 45%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #ff7226;
+    transition: .4s;
+    z-index: 3;
+}
+#dugme2:hover{
+    padding-left: 60px;
+    color: #1f1f1f;
+    width: 145px;
+    height: 60px;
+    padding-top: 7px;
+    border: none;
+    margin-top: 30px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #ff7226;
+    transition: .4s;
+    z-index: 3;
+}

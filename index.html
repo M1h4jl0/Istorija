@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Početna stranica</title>
+    <link rel="icon" href="mihailo2.ico">
+</head>
+<body>
+    <div id="tBlock"></div>
+    <img id="slika" src="slika.png">
+    <div id="veliki">
+        <div id="poseban" class="mali">
+            <p id="podN">Interaktivna Mapa</p>
+            <p id="text">Klikom na ovo dugme možete pogledati mapu Beograda i naučiti o poznatim srpskim ličnostima koje su živele u periodu srpske revolucije.</p>
+        </div>
+        <div class="mali">
+            <button id="dugme" onclick="javascript:delay('mapa.html')"><i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <script>
+        function delay (URL) {
+            setTimeout( function() { window.location = URL }, 1500);
+            document.getElementById("tBlock").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

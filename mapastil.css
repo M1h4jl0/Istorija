@@ -1,0 +1,256 @@
+body{
+    overflow: hidden;
+    font-family: 'Comfortaa', cursive;
+    padding: 10px;
+    background-color: #1f1f1f;
+    height: 100vh;
+    animation: Zamisli .5s;
+}
+@keyframes Zamisli{
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+#tBlock{
+    height: 100vh;
+    width: 200vw;
+    opacity: 0%;
+    z-index: -20;
+    background-color: #171717;
+    position: absolute;
+    top: 0;
+}
+#tBlock.active{
+    z-index: 3000;
+    height: 100vh;
+    width: 200vw;
+    background-color: #171717;
+    position: absolute;
+    top: 0;
+    left: 3700px;
+    opacity: 100%;
+    animation: Trans 10s;
+}
+@keyframes Trans{
+    0%{
+        left: -1000px;
+    }
+    50%{
+        left: 3700px;
+    }
+    100%{
+        left: 3700px;
+    }
+}
+.container{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+section{
+    width: 100%;
+    height: 100vh;
+}
+.veliki{
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+}
+.mali{
+    color: white;
+    width: 40%;
+    font-size: 150%;
+}
+#drzac{
+    display: flex;
+    padding-right: 25px;
+    width: 250px;
+    height: 310px;
+    border-radius: 10px;
+    background-color: #404040;
+    flex-direction: row;
+}
+.mauwi{
+    margin-left: 30px;
+}
+.txt{
+    font-size: 95%;
+    margin-top: 40px;
+}
+#kako{
+    position: relative;
+    animation: Kako 3s;
+}
+@keyframes Kako{
+    0%{
+        top: -180px;
+        opacity: 0%;
+    }
+    50%{
+        top: 0px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+.krug{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    margin-top: 36px;
+    border-radius: 100%;
+}
+#crveni{
+    background-color: #CB2B3E;
+}
+#purp{
+    background-color: #9C2BCB;
+}
+#zuti{
+    background-color: #FFD326;
+}
+#zeleni{
+    background-color: #2AAD27;
+}
+h2{
+    color: #ff7226;
+}
+#map {
+    border-radius: 10px;
+    height: 90vh;
+    width: 60%;
+    margin: 20px;
+    margin-top: 30px;
+}
+#velikiSlike{
+    display: flex;
+    flex-direction: row;
+    font-size: 112%;
+    font-family: 'Comfortaa', cursive;
+} 
+.maliSlike{
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+#ilijaG{
+    font-size: 90%;
+}
+#stanojeG{
+    font-size: 90%;
+}
+#vasaC{
+    font-size: 85%;
+}
+#velikiSlikeK{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 112%;
+    font-family: 'Comfortaa', cursive;
+    align-items: center;
+} 
+#karaDj{
+    width: 300px;
+    margin: 5px;
+    font-size: 105%;
+}
+#txtProta{
+    font-size: 90%;
+}
+#dugme{
+    color: #1f1f1f;
+    width: 145px;
+    height: 60px;
+    border: none;
+    padding-top: 7px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #ff7226;
+    transition: .4s;
+}
+#dugme:hover{
+    padding-left: 60px;
+    color: #1f1f1f;
+    width: 145px;
+    height: 60px;
+    padding-top: 7px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #d65e1e;
+    transition: .4s;
+}
+
+@media only screen and (max-width: 1200px){
+    body{
+        overflow-y: scroll;
+        font-family: 'Comfortaa', cursive;
+        padding: 10px;
+        background-color: #1f1f1f;
+        height: 100vh;
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    section#vise{
+        width: 100%;
+        height: 10vh;
+        margin-top: 300px;
+    }
+    .veliki{
+        display: flex;
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .mali{
+        color: white;
+        width: 100%;
+        font-size: 130%;
+    }
+    #map {
+        height: 70vh;
+        width: 100%;
+        margin: 0;
+    }
+    .txt{
+        margin-top: 42px;
+        font-size: 100%;
+    }
+    #dugme{
+        display: none;
+    }
+    #dugme2{
+        display: none;
+    }
+    .popup .content{
+        position: absolute;
+        overflow-y: scroll;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: white;
+        width: 60%;
+        height: 70%;
+        z-index: 10;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+    }
+}
